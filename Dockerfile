@@ -46,5 +46,8 @@ EXPOSE 8787
 
 CMD ["/init"]
 
-# bsub command
+# bsub build command
 # bsub -G compute-dspencer -q general-interactive -Is -a 'docker_build(dhspence/docker-rocker:jupyter240701)' -- --tag dhspence/docker-rocker:jupyter240701 --build-arg DEFAULT_USER=${USER} -f /storage1/fs1/dspencer/Active/spencerlab/dhs/git/docker-rocker/Dockerfile /storage1/fs1/dspencer/Active/spencerlab/dhs/git/docker-rocker/
+
+# bsub run command
+# $LSF_DOCKER_VOLUMES $HOME/rstudio_db/:/var/lib/rstudio-server\" LSF_DOCKER_PORTS=\"$port:$port\" bsub -eo $eo -oo $oo -g $group -G compute-dspencer -q $queue -R \"select[mem>=$mem1 && port$port=1] span[hosts=1] $mem2\" -n $cores -J \"quarto-jupyter\" -a \"docker($mycont)\" jupyter lab --allow-root --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password=''"

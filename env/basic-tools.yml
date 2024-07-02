@@ -22,6 +22,7 @@ dependencies:
   - Jinja2
   - openpyxl
   - scikit-misc
+  - scikit-learn
   - pip:
     - polars
     - diptest
