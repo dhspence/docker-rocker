@@ -12,9 +12,10 @@ dependencies:
   - seaborn
   - pybedtools
   - bedtools
-  - bcftools
-  - htslib
-  - samtools
+  - bcftools==1.20
+  - htslib==1.20
+  - samtools==1.20
+  - pysam
   - tabulate
   - deeptools
   - pip
@@ -23,6 +24,13 @@ dependencies:
   - openpyxl
   - scikit-misc
   - scikit-learn
+  - nextflow==24.04.4
+  - pyodbc
+  - cyvcf2==0.30.28
+  - pybigtools
+  - bigtools
+  - vcftools
+  - fibertools-rs
   - pip:
     - polars
     - diptest
@@ -36,3 +44,5 @@ dependencies:
     - figeno
     - pypandoc_binary 
     - cairosvg
+    - pyft
+    
