@@ -11,11 +11,11 @@ COPY scripts/conda_soft_links.sh /tmp/conda_soft_links.sh
 
 # Extra packages for R
 RUN sudo apt-get update && \
-    sudo apt-get -y install less curl gzip lsof libz-dev libbz2-dev liblzma-dev libxml2 libxml2-dev libxt6 libglpk-dev libmysqlclient21 libnss-sss openssh-client openssh-server && \
+    sudo apt-get -y install less curl gzip lsof libz-dev libbz2-dev liblzma-dev libxml2 libxml2-dev libxt6 libglpk-dev libmysqlclient21 libnss-sss openssh-client openssh-server cargo && \
     sudo apt-get clean
 
 RUN Rscript -e 'install.packages(c("tidyverse","ggplot2","reshape2","cowplot","dplyr","tidyr","vcfR"))'
-RUN Rscript -e 'install.packages("BiocManager"); BiocManager::install(version = "3.19")'
+RUN Rscript -e 'install.packages("BiocManager"); BiocManager::install(version = "3.19",ask = FALSE)'
 RUN Rscript -e 'BiocManager::install(c("bsseq","DESeq2","rtracklayer"))'
 
 # Install conda (mamba version) with Jupyter
@@ -41,8 +41,9 @@ RUN bash /tmp/conda_soft_links.sh $CONDA_DIR/bin
 RUN bash /rocker_scripts/default_user.sh "${DEFAULT_USER}" && \
     echo "server-user=${DEFAULT_USER}" >> /etc/rstudio/rserver.conf
 
-
 EXPOSE 8787
+
+RUN conda activate basic-tools
 
 CMD ["/init"]
 
