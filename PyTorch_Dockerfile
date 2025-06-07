@@ -1,0 +1,8 @@
+# start from the image dhspence/docker-rocker:jupyter240820 and add pytorch with cuda support using mamba
+
+FROM dhspence/docker-rocker:jupyter240820
+
+COPY pytorch.yml /tmp/
+RUN $CONDA_DIR/bin/mamba env update -n base -f /tmp/pytorch.yml && \
+    $CONDA_DIR/bin/conda clean -y --all
+

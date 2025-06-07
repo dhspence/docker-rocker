@@ -1,0 +1,24 @@
+name: pytorch
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - pytorch
+  - torchvision
+  - cudatoolkit=10.2
+  - pip:
+    - polars
+    - pyranges
+    - diptest
+    - gtfparse
+    - lets-plot
+    - openai
+    - langchain-openai
+    - jupyter-ai[all]
+    - python-docx
+    - shiny
+    - figeno
+    - pypandoc_binary 
+    - cairosvg
+    - rpy2

@@ -1,37 +1,29 @@
-name: basic-tools
 channels:
   - conda-forge
   - bioconda
   - defaults
 dependencies:
-  - python
   - ipykernel
   - pandas
   - numpy
-  - matplotlib
+  - matplotlib=3.6.0
   - seaborn
   - pybedtools
   - bedtools
-  - bcftools==1.20
-  - htslib==1.20
-  - samtools==1.20
+  - bcftools==1.21
+  - htslib==1.21
+  - samtools==1.21 
   - pysam
   - tabulate
-  - deeptools
   - pip
   - adjustText
   - Jinja2
   - openpyxl
   - scikit-misc
   - scikit-learn
-  - nextflow==24.04.4
+  - umap-learn
   - pyodbc
-  - cyvcf2==0.30.28
-  - pybigtools
-  - bigtools
-  - vcftools
-  - fibertools-rs
-  - coolbox
+  - cyvcf2
   - pip:
     - polars
     - diptest
@@ -41,8 +33,6 @@ dependencies:
     - langchain-openai
     - jupyter-ai[all]
     - python-docx
-    - shiny
-    - figeno
     - pypandoc_binary 
     - cairosvg
     
