@@ -43,7 +43,7 @@ RUN bash /rocker_scripts/default_user.sh "${DEFAULT_USER}" && \
 
 EXPOSE 8787
 
-RUN conda activate basic-tools
+RUN conda init && conda activate basic-tools
 
 CMD ["/init"]
 

@@ -22,15 +22,13 @@ dependencies:
   - adjustText
   - Jinja2
   - openpyxl
-  - scikit-misc
   - scikit-learn
   - nextflow==24.04.4
   - pyodbc
-  - cyvcf2==0.30.28
+  - cyvcf2
   - pybigtools
   - bigtools
   - vcftools
-  - fibertools-rs
   - coolbox
   - pip:
     - polars
